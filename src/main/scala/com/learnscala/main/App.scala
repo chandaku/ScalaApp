@@ -8,7 +8,7 @@ abstract class App [T:ClassTag:ConfigReader] {
   protected val settings : T = loadSettings
 
   protected def loadSettings: T = {
-    ConfigSource.default.loadOrThrow[T]
+    loadConfigOrThrow[T]
   }
 
   def getSetting() : T = {
